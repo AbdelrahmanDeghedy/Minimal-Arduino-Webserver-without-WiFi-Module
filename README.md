@@ -1,6 +1,6 @@
 # Minimal-Arduino-Webserver-without-WiFi-Module
 
-Minimal Arduino Webserver without WiFi Module
+This setup doesn't require an ESP or a WIFI module to run the web server. Instead, it uses Arduino and leverages serial communication.
 
 ## Setup
 
