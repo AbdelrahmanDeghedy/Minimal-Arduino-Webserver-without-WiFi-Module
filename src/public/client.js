@@ -1,6 +1,11 @@
 function sendData() {
   event.preventDefault();
-  slider1_current = document.getElementById("slider1").value;
+
+  // Get the value of the slider
+  const data = document.getElementById("slider").value;
+
+  // Update the value of the slider
+  document.getElementById("sliderLabel").innerHTML = data;
 
   // Send data to server
   fetch("/", {
@@ -9,7 +14,7 @@ function sendData() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      data: slider1_current,
+      data,
     }),
   })
     .then((response) => {

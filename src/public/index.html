@@ -2,7 +2,7 @@
 <html>
   <head>
     <script type="text/javascript" src="./client.js"></script>
-    <title>Robotics Slider Control</title>
+    <title>Minimal Arduino Webserver</title>
     <style>
       .slider {
         width: 50%;
@@ -55,9 +55,9 @@
   </head>
   <body>
     <form class="form-container">
-      <div id="sliderLabel1">90</div>
+      <div id="sliderLabel">90</div>
       <div class="slider">
-        <input type="range" min="0" max="180" value="90" id="slider1" />
+        <input type="range" min="0" max="180" value="90" id="slider" />
       </div>
       <button type="submit" onclick="sendData()">Submit</button>
     </form>

@@ -2,19 +2,19 @@ const { SerialPort } = require("serialport");
 const express = require("express");
 
 // Serial Communication
-// const serialPort = new SerialPort({
-//   path: "/dev/ttyACM1",
-//   baudRate: 9600,
-// });
+const serialPort = new SerialPort({
+  path: "/dev/ttyACM1",
+  baudRate: 9600,
+});
 
-// const writeToPort = (prompt) => {
-//   serialPort.write(`${prompt}\n`, (err) => {
-//     if (err) {
-//       return console.log("Error on write: ", err.message);
-//     }
-//     console.log("message written");
-//   });
-// };
+const writeToPort = (prompt) => {
+  serialPort.write(`${prompt}\n`, (err) => {
+    if (err) {
+      return console.log("Error on write: ", err.message);
+    }
+    console.log("message written");
+  });
+};
 
 // Creating an express server
 const app = express();
@@ -32,7 +32,7 @@ app.post("/", function (req, res) {
   const data = req.body;
 
   console.log("post request", data);
-  // writeToPort(`1:${data}`);
+  writeToPort(data);
 
   res.status(201).send("ok");
 });
